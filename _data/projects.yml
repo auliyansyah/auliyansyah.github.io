@@ -1,0 +1,24 @@
+- title: Project One
+  description: Modern web application with focus on performance
+  image: https://picsum.photos/id/1/400/300
+  tags:
+    - HTML5
+    - CSS3
+    - JavaScript
+  link: '#'
+
+- title: Project Two
+  description: E-commerce platform with advanced analytics
+  image: https://picsum.photos/id/2/400/300
+  tags:
+    - Web Design
+    - Analytics
+  link: '#'
+
+- title: Project Three
+  description: SEO optimization and performance enhancement
+  image: https://picsum.photos/id/3/400/300
+  tags:
+    - SEO
+    - Performance
+  link: '#'

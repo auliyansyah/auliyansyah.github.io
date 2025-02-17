@@ -1,0 +1,43 @@
+---
+layout: default
+title: Blog | Web Developer & Digital Marketing Specialist
+description: Thoughts and insights about web development, digital marketing, and technology
+---
+
+<section class="blog-index">
+    <div class="container">
+        <h1 class="page-title">Blog</h1>
+        <div class="post-grid">
+            {% for post in site.posts %}
+            <article class="post-card">
+                {% if post.image %}
+                <div class="post-image">
+                    <a href="{{ post.url | relative_url }}">
+                        <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="post-content">
+                    <header class="post-header">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
+                        <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                    </header>
+                    <div class="post-excerpt">
+                        {{ post.description | default: post.excerpt | strip_html | truncatewords: 30 }}
+                    </div>
+                    <footer class="post-meta">
+                        {% if post.categories.size > 0 %}
+                        <div class="post-categories">
+                            {% for category in post.categories %}
+                            <a href="/categories/{{ category | slugify }}/" class="category">{{ category }}</a>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+                    </footer>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

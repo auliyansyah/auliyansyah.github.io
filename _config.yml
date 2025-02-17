@@ -1,0 +1,52 @@
+title: Your Name
+description: Web Developer & Digital Marketing Specialist
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-reading-time
+
+# Site settings
+author: Your Name
+email: your.email@example.com
+github_username: yourusername
+linkedin_username: yourusername
+
+# Blog settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  experiences:
+    output: true
+    permalink: /experiences/:path/
+
+# Archives
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    year: '/archives/:year/'
+    month: '/archives/:year/:month/'
+    day: '/archives/:year/:month/:day/'
+    tag: '/archives/tag/:name/'
+    category: '/archives/category/:name/'
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

@@ -1,177 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio showcasing web development, design, and digital marketing expertise">
-    <title>Portfolio | Web Developer & Digital Marketing Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="header">
-        <nav class="nav-container">
-            <div class="logo">A.</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <h1>Web Developer &<br>Digital Marketing Specialist</h1>
-                <p>Crafting digital experiences & driving growth through data-driven solutions</p>
-                <a href="#work" class="cta-button">View My Work</a>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://picsum.photos/300/300" alt="Profile Picture">
-                    </div>
-                    <div class="about-text">
-                        <p>I'm a passionate web developer and digital marketing specialist with over 5 years of experience in creating elegant, user-centric solutions. I combine technical expertise with marketing insights to deliver impactful digital experiences that drive business growth.</p>
-                        <p>Throughout my career, I've worked with various technologies and frameworks, always staying at the forefront of web development trends. My approach combines clean code practices with data-driven marketing strategies to create solutions that not only look great but also perform exceptionally well.</p>
-                        <a href="#contact" class="about-cta">Let's Work Together</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Web Development</h3>
-                        <ul>
-                            <li class="html">HTML5</li>
-                            <li class="css">CSS3</li>
-                            <li class="js">JavaScript</li>
-                            <li class="responsive">Responsive Design</li>
-                            <li class="performance">Web Performance</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Web Design</h3>
-                        <ul>
-                            <li>UI/UX Design</li>
-                            <li>Wireframing</li>
-                            <li>Prototyping</li>
-                            <li>Visual Design</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Digital Marketing</h3>
-                        <ul>
-                            <li>Google Analytics</li>
-                            <li>Data Studio</li>
-                            <li>Search Console</li>
-                            <li>SEO Optimization</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Other Skills</h3>
-                        <ul>
-                            <li>Automation</li>
-                            <li>System Integration</li>
-                            <li>Performance Optimization</li>
-                            <li>Technical SEO</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="work">
-            <div class="container">
-                <h2>Featured Work</h2>
-                <div class="work-grid">
-                    <div class="work-item">
-                        <img src="https://picsum.photos/id/1/400/300" alt="Project One" loading="lazy">
-                        <h3>Project One</h3>
-                        <p>Modern web application with focus on performance</p>
-                        <div class="tags">
-                            <span class="tag"><i class="fab fa-html5"></i> HTML5</span>
-                            <span class="tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-                            <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
-                            <span class="tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
-                            <span class="tag"><i class="fas fa-tachometer-alt"></i> Performance</span>
-                        </div>
-                        <button class="project-link" onclick="showProjectModal(0)">View Details</button>
-                    </div>
-                    <div class="work-item">
-                        <img src="https://picsum.photos/id/2/400/300" alt="Project Two" loading="lazy">
-                        <h3>Project Two</h3>
-                        <p>E-commerce platform with advanced analytics</p>
-                        <div class="tags">
-                            <span class="tag"><i class="fas fa-shopping-cart"></i> E-commerce</span>
-                            <span class="tag"><i class="fas fa-chart-line"></i> Analytics</span>
-                            <span class="tag"><i class="fas fa-database"></i> Database</span>
-                            <span class="tag"><i class="fas fa-shield-alt"></i> Security</span>
-                        </div>
-                        <button class="project-link" onclick="showProjectModal(1)">View Details</button>
-                    </div>
-                    <div class="work-item">
-                        <img src="https://picsum.photos/id/3/400/300" alt="Project Three" loading="lazy">
-                        <h3>Project Three</h3>
-                        <p>SEO optimization and performance enhancement</p>
-                        <div class="tags">
-                            <span class="tag"><i class="fas fa-search"></i> SEO</span>
-                            <span class="tag"><i class="fas fa-tachometer-alt"></i> Performance</span>
-                            <span class="tag"><i class="fas fa-code"></i> Clean Code</span>
-                            <span class="tag"><i class="fas fa-rocket"></i> Optimization</span>
-                        </div>
-                        <button class="project-link" onclick="showProjectModal(2)">View Details</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="experience">
-            <div class="container">
-                <h2>Work Experience</h2>
-                <div class="timeline">
-                    <!-- Experience items will be populated via JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p>Let's discuss your next project</p>
-                        <div class="social-links">
-                            <a href="#" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                            <a href="#" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Portfolio. All rights reserved.</p>
+---
+layout: default
+title: Home
+---
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ site.title }}</h1>
+        <p class="lead">{{ site.description }}</p>
+        <div class="hero-buttons">
+            <a href="{{ '/about' | relative_url }}" class="btn btn-primary">About Me</a>
+            <a href="{{ '/projects' | relative_url }}" class="btn btn-secondary">View Projects</a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="js/main.js" defer></script>
-</body>
-</html>
+<section class="featured-projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+        {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
+        {% for project in featured_projects %}
+        <div class="project-card">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+            <div class="project-content">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.excerpt }}</p>
+                <a href="{{ project.url | relative_url }}" class="read-more">Learn More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="latest-posts">
+    <h2>Latest Blog Posts</h2>
+    <div class="post-grid">
+        {% for post in site.posts limit:3 %}
+        <article class="post-card">
+            <div class="post-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+            </div>
+            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>

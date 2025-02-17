@@ -1,14 +1,26 @@
-- role: Senior Web Developer
-  company: Tech Solutions Inc.
-  period: 2020 - Present
-  description: Lead developer for enterprise web applications
+- company: "Tech Company One"
+  position: "Senior Web Developer"
+  period: "2020 - Present"
+  description: |
+    - Led development of multiple full-stack web applications
+    - Mentored junior developers and conducted code reviews
+    - Implemented CI/CD pipelines and improved deployment processes
+    - Reduced application load time by 40% through optimization
 
-- role: Digital Marketing Specialist
-  company: Growth Agency
-  period: 2018 - 2020
-  description: Managed analytics and optimization campaigns
+- company: "Digital Agency"
+  position: "Full Stack Developer"
+  period: "2018 - 2020"
+  description: |
+    - Developed responsive websites for various clients
+    - Integrated third-party APIs and payment gateways
+    - Optimized database queries and improved site performance
+    - Collaborated with design team on UI/UX improvements
 
-- role: Web Designer
-  company: Creative Studio
-  period: 2016 - 2018
-  description: Designed and developed responsive websites
+- company: "Startup Inc"
+  position: "Junior Developer"
+  period: "2016 - 2018"
+  description: |
+    - Built and maintained company website and internal tools
+    - Assisted in developing mobile-first web applications
+    - Participated in daily stand-ups and sprint planning
+    - Learned and implemented modern web technologies

@@ -1,24 +1,23 @@
-- title: Project One
-  description: Modern web application with focus on performance
-  image: https://picsum.photos/id/1/400/300
-  tags:
-    - HTML5
-    - CSS3
-    - JavaScript
-  link: '#'
+- title: "Project One"
+  description: "A responsive web application built with React and Node.js"
+  image: "/assets/images/project1.jpg"
+  featured: true
+  technologies: [React, Node.js, MongoDB]
+  github: "https://github.com/yourusername/project-one"
+  demo: "https://project-one-demo.com"
 
-- title: Project Two
-  description: E-commerce platform with advanced analytics
-  image: https://picsum.photos/id/2/400/300
-  tags:
-    - Web Design
-    - Analytics
-  link: '#'
+- title: "Project Two"
+  description: "An e-commerce platform with real-time inventory management"
+  image: "/assets/images/project2.jpg"
+  featured: true
+  technologies: [Vue.js, Express, PostgreSQL]
+  github: "https://github.com/yourusername/project-two"
+  demo: "https://project-two-demo.com"
 
-- title: Project Three
-  description: SEO optimization and performance enhancement
-  image: https://picsum.photos/id/3/400/300
-  tags:
-    - SEO
-    - Performance
-  link: '#'
+- title: "Project Three"
+  description: "A machine learning application for data analysis"
+  image: "/assets/images/project3.jpg"
+  featured: true
+  technologies: [Python, TensorFlow, Flask]
+  github: "https://github.com/yourusername/project-three"
+  demo: "https://project-three-demo.com"

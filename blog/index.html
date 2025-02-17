@@ -9,7 +9,7 @@ title: Blog
         <article class="post-card">
             <div class="post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-                • {% reading_time %} read
+                • {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read
                 {% if post.categories.size > 0 %}
                 • 
                 <span class="categories">

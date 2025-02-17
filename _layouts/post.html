@@ -6,7 +6,7 @@ layout: default
         <h1 class="post-title">{{ page.title }}</h1>
         <div class="post-meta">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-            • {% reading_time %} read
+            • {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
             {% if page.categories.size > 0 %}
             • 
             <span class="categories">

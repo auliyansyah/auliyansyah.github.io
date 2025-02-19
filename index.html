@@ -2,46 +2,82 @@
 layout: default
 title: Home
 ---
-<section class="hero">
-    <div class="hero-content">
-        <h1>{{ site.title }}</h1>
-        <p class="lead">{{ site.description }}</p>
-        <div class="hero-buttons">
-            <a href="{{ '/about' | relative_url }}" class="btn btn-primary">About Me</a>
-            <a href="{{ '/projects' | relative_url }}" class="btn btn-secondary">View Projects</a>
-        </div>
-    </div>
-</section>
 
-<section class="featured-projects">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-        {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
-        {% for project in featured_projects %}
-        <div class="project-card">
-            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
-            <div class="project-content">
-                <h3>{{ project.title }}</h3>
-                <p>{{ project.excerpt }}</p>
-                <a href="{{ project.url | relative_url }}" class="read-more">Learn More</a>
-            </div>
-        </div>
-        {% endfor %}
+<div class="bg-gradient-to-r from-primary/5 to-secondary/5 py-16">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+        <img src="/assets/images/logo.svg" alt="Auliyansyah Logo" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/200x200?text=Logo'">
+      </div>
+      <div class="md:flex-1">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Web Developer & System Integrator</h1>
+        <p class="text-xl text-gray-600">Crafting modern web solutions and seamless system integrations</p>
+      </div>
     </div>
-</section>
+  </div>
+</div>
 
-<section class="latest-posts">
-    <h2>Latest Blog Posts</h2>
-    <div class="post-grid">
-        {% for post in site.posts limit:3 %}
-        <article class="post-card">
-            <div class="post-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-            </div>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
-        </article>
-        {% endfor %}
+<div class="container mx-auto px-4 py-16">
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Services</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="text-primary mb-4">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/code.svg" alt="Web Development" class="w-12 h-12">
+        </div>
+        <h3 class="text-xl font-semibold text-primary mb-4">Web Development</h3>
+        <p class="text-gray-600">Creating responsive and performant web applications using modern technologies</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="text-primary mb-4">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/server.svg" alt="System Integration" class="w-12 h-12">
+        </div>
+        <h3 class="text-xl font-semibold text-primary mb-4">System Integration</h3>
+        <p class="text-gray-600">API integration, inventory sync, order management, and sales analytics with Google Looker Studio</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="text-primary mb-4">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/chart-bar.svg" alt="Technical Consulting" class="w-12 h-12">
+        </div>
+        <h3 class="text-xl font-semibold text-primary mb-4">Technical Consulting</h3>
+        <p class="text-gray-600">Providing expert guidance on technology solutions and architecture</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="text-primary mb-4">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/search.svg" alt="SEO Services" class="w-12 h-12">
+        </div>
+        <h3 class="text-xl font-semibold text-primary mb-4">SEO Services</h3>
+        <p class="text-gray-600">Comprehensive on-page and technical SEO optimization to improve search visibility</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div class="text-primary mb-4">
+          <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.1/outline/shopping-cart.svg" alt="eCommerce Solutions" class="w-12 h-12">
+        </div>
+        <h3 class="text-xl font-semibold text-primary mb-4">eCommerce Solutions</h3>
+        <p class="text-gray-600">Expert implementation of Maropost Commerce and Magento platforms</p>
+      </div>
     </div>
-</section>
+  </section>
+
+  <section>
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Featured Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {% for project in site.projects limit:3 %}
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+        <div class="aspect-w-16 aspect-h-9 bg-gray-200">
+          <img src="{{ project.image | default: 'https://source.unsplash.com/600x400/?technology,web' }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ project.title }}</h3>
+          <p class="text-gray-600 mb-4">{{ project.excerpt }}</p>
+          <div class="flex flex-wrap gap-2">
+            {% for tag in project.tags %}
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>

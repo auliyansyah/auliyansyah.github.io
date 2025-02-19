@@ -1,0 +1,49 @@
+---
+layout: default
+title: Work Experience
+---
+
+<div class="container mx-auto px-4 py-16">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl font-bold text-gray-800 mb-4">Work Experience</h1>
+    <p class="text-xl text-gray-600">Professional journey and achievements in web development and system integration</p>
+  </header>
+
+  <div class="relative work-timeline">
+    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-primary/20"></div>
+    
+    {% for work in site.work %}
+    <div class="work-item relative {% cycle 'left', 'right' %} mb-16">
+      <div class="work-content bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow {% cycle 'mr-auto', 'ml-auto' %} w-5/12">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+            <img src="{{ work.logo | default: '/assets/images/company-default.svg' }}" alt="{{ work.company }} logo" class="w-8 h-8 object-contain">
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-primary mb-1">{{ work.position }}</h3>
+            <p class="text-gray-600 font-medium">{{ work.company }}</p>
+            <p class="text-gray-500 text-sm">{{ work.period }}</p>
+          </div>
+        </div>
+        
+        <div class="prose prose-sm max-w-none text-gray-600 mb-4">
+          {{ work.content }}
+        </div>
+        
+        {% if work.achievements %}
+        <div class="space-y-2">
+          {% for achievement in work.achievements %}
+          <div class="flex items-start gap-2">
+            <span class="text-primary">•</span>
+            <p class="text-gray-600 flex-1">{{ achievement }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      
+      <div class="absolute top-6 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-white"></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

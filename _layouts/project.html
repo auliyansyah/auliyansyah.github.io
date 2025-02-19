@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4A90E2',
+            secondary: '#FF9F43',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          typography: {
+            DEFAULT: {
+              css: {
+                maxWidth: 'none',
+                color: '#1a1a1a',
+                h1: {
+                  fontWeight: 700,
+                },
+                h2: {
+                  fontWeight: 600,
+                },
+                h3: {
+                  fontWeight: 600,
+                },
+              },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+  {% feed_meta %}
+  {% seo %}
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm py-4">
+    <div class="container mx-auto px-4">
+      <nav class="flex justify-between items-center">
+        <a class="text-primary font-bold text-2xl hover:text-primary/90 transition-colors" href="/">{{ site.title }}</a>
+        <div class="space-x-8">
+          <a class="text-gray-700 hover:text-secondary font-medium transition-colors" href="/portfolio">Portfolio</a>
+          <a class="text-gray-700 hover:text-secondary font-medium transition-colors" href="/work">Work</a>
+          <a class="text-gray-700 hover:text-secondary font-medium transition-colors" href="/about">About</a>
+          <a class="text-gray-700 hover:text-secondary font-medium transition-colors" href="/contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="min-h-screen py-12">
+    <article class="container mx-auto px-4">
+      <header class="max-w-4xl mx-auto mb-16 text-center">
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">{{ page.title }}</h1>
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          {% for tag in page.tags %}
+          <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% if page.live_url %}
+        <a href="{{ page.live_url }}" target="_blank" class="inline-flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+          <span>Visit Live Site</span>
+        </a>
+        {% endif %}
+      </header>
+
+      <div class="prose prose-lg max-w-4xl mx-auto mb-16">
+        <div class="space-y-8">
+          {{ content }}
+        </div>
+      </div>
+
+      {% if page.images %}
+      <div class="max-w-7xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Project Gallery</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {% for image in page.images %}
+          <div class="group relative aspect-w-16 aspect-h-9 bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+            <img src="{{ image }}" alt="Project screenshot" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.demo_url or page.github_url %}
+      <div class="flex justify-center gap-6 mt-12">
+        {% if page.demo_url %}
+        <a href="{{ page.demo_url }}" target="_blank" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors shadow-sm hover:shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+          </svg>
+          View Demo
+        </a>
+        {% endif %}
+        {% if page.github_url %}
+        <a href="{{ page.github_url }}" target="_blank" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md">
+          <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+          View on GitHub
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </article>
+  </main>
+
+  <footer class="bg-gray-100 py-12 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-8">
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" class="text-gray-600 hover:text-primary transition-colors font-medium">GitHub</a>
+        {% endif %}
+        {% if site.linkedin_username %}
+        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" class="text-gray-600 hover:text-primary transition-colors font-medium">LinkedIn</a>
+        {% endif %}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
